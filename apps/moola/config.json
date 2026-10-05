@@ -1,0 +1,25 @@
+{
+  "name": "Moola",
+  "id": "moola",
+  "available": false,
+  "short_desc": "Simple financial planning for individuals and households.",
+  "author": "Stuff4Mzansi",
+  "port": 8383,
+  "categories": [
+    "finance"
+  ],
+  "description": "Manage budgets, subscriptions, recurring expenses, debts, savings goals, net worth, and liquidity. Household members share financial plans and receive configurable budget reminders.",
+  "min_tipi_version": "4.5.0",
+  "tipi_version": 1,
+  "version": "1.0.0",
+  "source": "https://github.com/Stuff4Mzansi/moola",
+  "exposable": true,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "created_at": 1791196119247,
+  "updated_at": 1791196119247,
+  "dynamic_config": true,
+  "form_fields": []
+}

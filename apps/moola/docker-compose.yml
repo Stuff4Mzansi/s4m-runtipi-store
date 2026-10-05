@@ -1,0 +1,25 @@
+services:
+  moola:
+    image: ghcr.io/stuff4mzansi/moola:1.0.0
+    restart: unless-stopped
+    init: true
+    environment:
+      APP_URL: ${APP_PROTOCOL}://${APP_DOMAIN}
+      APP_TIMEZONE: ${TZ:-Africa/Johannesburg}
+      TRUSTED_PROXIES: 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    stop_grace_period: 30s
+    x-runtipi:
+      is_main: true
+      internal_port: 8080
+
+x-runtipi:
+  schema_version: 2

@@ -1,31 +1,37 @@
-# Example App Store Template
+# S4M Runtipi Store
 
-This repository serves as a template for creating your own custom app store for the Runtipi platform. Use this as a starting point to create and share your own collection of applications.
+Custom Runtipi apps maintained by Stuff4Mzansi.
 
-## Repository Structure
+Add `https://github.com/Stuff4Mzansi/s4m-runtipi-store` under **Settings ? App Stores ? Add App Store** in Runtipi. After store updates are published, use **Update App Stores** to refresh the catalogue.
 
-- **apps/**: Contains individual app directories
+## Apps
 
-  - Each app has its own folder (e.g., `whoami/`) with the following structure:
-    - `config.json`: App configuration file
-    - `docker-compose.json`: Docker setup for the app
-    - `metadata/`: Contains app visuals and descriptions
-      - `description.md`: Markdown description of the app
-      - `logo.jpg`: App logo image
+- **Whoami:** a small HTTP diagnostic service.
+- **Moola:** financial planning for individuals and households, including budgets, subscriptions, debt, savings, net worth, and reminders.
 
-- **tests/**: Contains test files for the app store
+## Moola release preparation
 
-  - `apps.test.ts`: Test suite for validating apps
+The Moola entry targets `ghcr.io/stuff4mzansi/moola:1.0.0`. It is marked `available: false` until the image is publicly pullable and its Runtipi installation has been verified.
 
-## Getting Started
+1. Push the intended Moola application release to `Stuff4Mzansi/moola`.
+2. Run its **Docker** GitHub Actions workflow with **publish** enabled and version `1.0.0`. The workflow runs container smoke tests before publishing amd64 and arm64 images.
+3. Set the GHCR package visibility to public and verify an unauthenticated pull of `ghcr.io/stuff4mzansi/moola:1.0.0`.
+4. Test first-admin setup, restart persistence, reminders, and backup/restore on Runtipi; verify ARM installation on ARM hardware before advertising it as tested.
+5. Set `apps/moola/config.json` to `available: true`, update its `updated_at`, run the store tests, and publish the store changes.
 
-This repository is intended to serve as a template for creating your own app store. Follow these steps to get started:
+For later releases, update the pinned image tag and app version together, increment `tipi_version`, and update `updated_at`. Preserve the app data directory during upgrades.
 
-1. Click the "Use this template" button to create a new repository based on this template
-2. Customize the apps or add your own app folders in the `apps/` directory
-3. Test your app store by using it with Runtipi
+## App structure
 
-## Documentation
+Each `apps/<id>/` directory contains `config.json`, `docker-compose.yml`, and `metadata/description.md` plus a square `metadata/logo.jpg`. Compose files use schema-v2 `x-runtipi` routing metadata. Legacy JSON compose files remain supported by the tests.
 
-For detailed instructions on creating your own app store, please refer to the official guide:
-[Create Your Own App Store Guide](https://runtipi.io/docs/guides/create-your-own-app-store)
+## Validation
+
+Use a current Bun 1.3 release or newer to read the committed binary lockfile. The template declares an older Bun package that cannot read that lockfile.
+
+```sh
+bun install --frozen-lockfile
+bun test
+```
+
+See the [Runtipi custom store guide](https://runtipi.io/docs/guides/create-your-own-app-store) and [dynamic compose reference](https://runtipi.io/docs/reference/dynamic-compose).
