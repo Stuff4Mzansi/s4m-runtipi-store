@@ -9,12 +9,12 @@ Add `https://github.com/Stuff4Mzansi/s4m-runtipi-store` under **Settings ? App S
 - **Whoami:** a small HTTP diagnostic service.
 - **Moola:** financial planning for individuals and households, including budgets, subscriptions, debt, savings, net worth, and reminders.
 
-## Moola release preparation
+## Moola releases
 
-The Moola entry targets `ghcr.io/stuff4mzansi/moola:1.0.0`. It is marked `available: false` until the image is publicly pullable and its Runtipi installation has been verified.
+Moola is available in the store using the public image `ghcr.io/stuff4mzansi/moola:1.0.0`, with amd64 and arm64 manifests. The release passed container smoke tests for first-admin setup, restart persistence, and backup/restore. Installation on Runtipi and ARM runtime still need verification on the target hardware.
 
 1. Push the intended Moola application release to `Stuff4Mzansi/moola`.
-2. Run its **Docker** GitHub Actions workflow with **publish** enabled and version `1.0.0`. The workflow runs container smoke tests before publishing amd64 and arm64 images.
+2. Push a versioned release tag such as `v1.0.0`, or run its **Docker** GitHub Actions workflow with **publish** enabled and the matching version. The workflow runs container smoke tests before publishing amd64 and arm64 images.
 3. Set the GHCR package visibility to public and verify an unauthenticated pull of `ghcr.io/stuff4mzansi/moola:1.0.0`.
 4. Test first-admin setup, restart persistence, reminders, and backup/restore on Runtipi; verify ARM installation on ARM hardware before advertising it as tested.
 5. Set `apps/moola/config.json` to `available: true`, update its `updated_at`, run the store tests, and publish the store changes.
