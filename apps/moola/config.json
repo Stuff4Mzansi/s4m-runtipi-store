@@ -10,8 +10,8 @@
   ],
   "description": "Manage budgets, subscriptions, recurring expenses, debts, savings goals, net worth, and liquidity. Household members share financial plans and receive configurable budget reminders.",
   "min_tipi_version": "4.5.0",
-  "tipi_version": 3,
-  "version": "1.0.1",
+  "tipi_version": 4,
+  "version": "1.0.2",
   "source": "https://github.com/Stuff4Mzansi/moola",
   "exposable": true,
   "supported_architectures": [
@@ -19,7 +19,7 @@
     "arm64"
   ],
   "created_at": 1791196119247,
-  "updated_at": 1791268944874,
+  "updated_at": 1791268944875,
   "dynamic_config": true,
   "form_fields": []
 }
