@@ -1,6 +1,6 @@
 services:
   moola:
-    image: ghcr.io/stuff4mzansi/moola:1.0.3
+    image: ghcr.io/stuff4mzansi/moola:1.0.4
     restart: unless-stopped
     init: true
     environment:
