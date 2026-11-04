@@ -1,0 +1,25 @@
+{
+  "name": "EdenText",
+  "id": "edentext",
+  "available": true,
+  "short_desc": "A full-featured, private word processor that runs in your browser.",
+  "author": "stffnb",
+  "port": 8384,
+  "categories": [
+    "utilities"
+  ],
+  "description": "Create and edit documents in your browser with support for ODT and DOCX, PDF export, review tools, and offline use. Documents are processed locally and stay in your browser.",
+  "min_tipi_version": "4.5.0",
+  "tipi_version": 1,
+  "version": "0.13.0",
+  "source": "https://github.com/stffnb/edentext",
+  "exposable": true,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "created_at": 1793791920000,
+  "updated_at": 1793791920000,
+  "dynamic_config": true,
+  "form_fields": []
+}

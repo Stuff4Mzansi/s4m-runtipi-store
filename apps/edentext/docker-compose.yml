@@ -1,0 +1,10 @@
+services:
+  edentext:
+    image: ghcr.io/stffnb/edentext:v0.13.0
+    restart: unless-stopped
+    x-runtipi:
+      is_main: true
+      internal_port: 80
+
+x-runtipi:
+  schema_version: 2

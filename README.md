@@ -8,6 +8,7 @@ Add `https://github.com/Stuff4Mzansi/s4m-runtipi-store` under **Settings ? App S
 
 - **Whoami:** a small HTTP diagnostic service.
 - **Moola:** financial planning for individuals and households, including budgets, subscriptions, debt, savings, net worth, and reminders.
+- **EdenText:** a private, browser-based word processor for ODT and DOCX documents.
 
 ## Moola releases
 
