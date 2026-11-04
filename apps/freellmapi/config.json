@@ -1,0 +1,35 @@
+{
+  "name": "FreeLLMAPI",
+  "id": "freellmapi",
+  "available": true,
+  "short_desc": "A self-hosted OpenAI-compatible API that routes across free LLM providers.",
+  "author": "tashfeenahmed",
+  "port": 8386,
+  "categories": [
+    "ai"
+  ],
+  "description": "Unify free LLM providers and custom OpenAI-compatible endpoints behind one API, with fallback routing and a web dashboard. Provider credentials are encrypted at rest. This single-user service is intended for trusted local access; do not expose it to the public internet.",
+  "min_tipi_version": "4.5.0",
+  "tipi_version": 1,
+  "version": "v0.16.19",
+  "source": "https://github.com/tashfeenahmed/freellmapi",
+  "website": "https://freellmapi.co",
+  "exposable": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "created_at": 1793807294260,
+  "updated_at": 1793807294260,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "random",
+      "label": "Provider credential encryption key",
+      "min": 64,
+      "max": 64,
+      "encoding": "hex",
+      "env_variable": "ENCRYPTION_KEY"
+    }
+  ]
+}

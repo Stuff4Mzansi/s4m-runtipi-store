@@ -10,6 +10,7 @@ Add `https://github.com/Stuff4Mzansi/s4m-runtipi-store` under **Settings ? App S
 - **Moola:** financial planning for individuals and households, including budgets, subscriptions, debt, savings, net worth, and reminders.
 - **EdenText:** a private, browser-based word processor for ODT and DOCX documents.
 - **LAN Orangutan:** self-hosted discovery and inventory for local networks.
+- **FreeLLMAPI:** a self-hosted OpenAI-compatible API that routes across free LLM providers.
 
 ## Moola releases
 
