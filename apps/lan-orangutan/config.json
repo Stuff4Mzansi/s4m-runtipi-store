@@ -1,0 +1,25 @@
+{
+  "name": "LAN Orangutan",
+  "id": "lan-orangutan",
+  "available": true,
+  "short_desc": "Discover and keep track of devices on your local networks.",
+  "author": "291-Group",
+  "port": 291,
+  "categories": [
+    "utilities"
+  ],
+  "description": "Self-hosted network discovery with a web dashboard, device labels, change tracking, and export. Use only on networks you own or are authorized to manage.",
+  "min_tipi_version": "4.5.0",
+  "tipi_version": 1,
+  "version": "3.4.2",
+  "source": "https://github.com/291-Group/LAN-Orangutan",
+  "exposable": false,
+  "supported_architectures": [
+    "amd64",
+    "arm64"
+  ],
+  "created_at": 1793792933323,
+  "updated_at": 1793792933323,
+  "dynamic_config": true,
+  "form_fields": []
+}
